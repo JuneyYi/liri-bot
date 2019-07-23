@@ -75,7 +75,7 @@ var getMeMovie = function(movieName) {
   }
 
   var urlHit =
-    "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=full&tomatoes=true&apikey=1c29c01f";
+    "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=full&tomatoes=true&apikey=trilogy";
 
   axios.get(urlHit).then(
     function(response) {
