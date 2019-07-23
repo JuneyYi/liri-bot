@@ -3,15 +3,10 @@ require("dotenv").config();
 require("dotenv").config();
 
 var Spotify = require("node-spotify-api");
-
 var keys = require("./keys");
-
 var axios = require("axios");
-
 var moment = require("moment");
-
 var fs = require("fs");
-
 var spotify = new Spotify(keys.spotify);
 
 var getArtistNames = function(artist) {
@@ -67,12 +62,7 @@ var getMyBands = function(artist) {
 
         console.log(
           show.venue.city +
-            "," +
-            (show.venue.region || show.venue.country) +
-            " at " +
-            show.venue.name +
-            " " +
-            moment(show.datetime).format("MM/DD/YYYY")
+            "," + (show.venue.region || show.venue.country) + " at " + show.venue.name + " " + moment(show.datetime).format("MM/DD/YYYY")
         );
       }
     }
@@ -85,7 +75,7 @@ var getMeMovie = function(movieName) {
   }
 
   var urlHit =
-    "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=full&tomatoes=true&apikey=trilogy";
+    "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=full&tomatoes=true&apikey=1c29c01f";
 
   axios.get(urlHit).then(
     function(response) {
@@ -94,7 +84,6 @@ var getMeMovie = function(movieName) {
       console.log("Title: " + jsonData.Title);
       console.log("Year: " + jsonData.Year);
       console.log("Rated: " + jsonData.Rated);
-      console.log("IMDB Rating: " + jsonData.imdbRating);
       console.log("Country: " + jsonData.Country);
       console.log("Language: " + jsonData.Language);
       console.log("Plot: " + jsonData.Plot);
@@ -133,7 +122,7 @@ var pick = function(caseData, functionData) {
     doWhatItSays();
     break;
   default:
-    console.log("LIRI doesn't know that");
+    console.log("Liri doesn't understand. Please try again.");
   }
 };
 
