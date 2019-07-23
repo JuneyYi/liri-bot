@@ -2,11 +2,16 @@
   "name": "liri-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "node.js",
+  "main": "keys.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.0.0",
+    "moment": "^2.22.2",
+    "node-spotify-api": "^1.0.7"
+  }
 }
